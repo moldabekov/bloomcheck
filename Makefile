@@ -81,7 +81,7 @@ windows:
 docker: linux
 	upx -9 $(BINARY_NAME)
 	docker build -t $(DOCKER_NAME) .
-	#docker run --rm -p 9876:9876 $(DOCKER_NAME)
+	#docker run --rm -p 172.17.0.1:9876:9876 -d --name bloomcheck mldbk/bloomcheck	
 
 deps:
 	GOPATH=$(GOPATH) $(GOGET) -u github.com/gorilla/mux
