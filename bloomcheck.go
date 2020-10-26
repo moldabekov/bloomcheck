@@ -19,7 +19,9 @@ var m = math.Ceil((n * math.Log(fp)) / math.Log(1.0 / math.Pow(2.0, math.Log(2.0
 var k = uint(10)                                                                     // Number of hash functions
 var filterSHA = bloom.New(uint(m), k)
 
-// At this moment only one filter is supported. Since filter should be loaded enterily to memory, it is hard to keep both SHA-1 and NTLM filter at the same time.
+// At this moment only one filter is supported. 
+// Since filter should be loaded enterily to memory, it is hard to keep both SHA-1 and NTLM filters at the same time.
+// This limiation is selfmade due to keep possibility to run bloomcheck in 1GB RAM VM
 // That is why only one filter is supported now. 
 // TODO: add CLI options to choose and specify runtime options.
 
