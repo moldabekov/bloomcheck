@@ -6,4 +6,4 @@ COPY bloomcheck /
 
 COPY bloom.filter /
 
-CMD ["/usr/local/bin/bloomcheck", "/bloom.filter"]
+CMD ["/bloomcheck", "/bloom.filter"]
